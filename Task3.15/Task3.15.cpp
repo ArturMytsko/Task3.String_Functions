@@ -10,7 +10,7 @@
    * @brief      Main function
    * @return	 0
    */
-int tmain(int argc, _TCHAR* argv[])
+int _tmain(int argc, _TCHAR* argv[])
 {
 	char *pcInputBuffer; //text
 	UC *ucChar;			 //letter
@@ -25,6 +25,7 @@ int tmain(int argc, _TCHAR* argv[])
 			pcInputBuffer, ucChar[0]);
 
 	HideWords(pcInputBuffer, strlen(pcInputBuffer), ucChar[0]);
+	printf("--------------result--------------------\n%s", pcInputBuffer);
 
 	delete[] pcInputBuffer;
 	delete[] ucChar;
