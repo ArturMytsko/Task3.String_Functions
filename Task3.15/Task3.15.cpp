@@ -26,6 +26,8 @@ int tmain(int argc, _TCHAR* argv[])
 
 	HideWords(pcInputBuffer, strlen(pcInputBuffer), ucChar[0]);
 
+	delete[] pcInputBuffer;
+	delete[] ucChar;
 	_getch();
 	return 0;
 }
