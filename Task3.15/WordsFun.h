@@ -21,7 +21,8 @@ bool InputData(char *&pcBuffer, UC *&cLetter);
    * @param	[in, out] pcInputStr - pointer to given text
    * @param	[in]      usSize - size of text
    * @param	[in, out] cLetter - pointer to given letter
-   * @return	      void
+   * @return	         void
+   * @remark          Separator is everything that is not an English letter
    */
 void HideWords(char *pcInputStr, US usSize, char cLetter);
 
