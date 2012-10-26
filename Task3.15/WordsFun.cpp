@@ -20,12 +20,19 @@ bool InputData(char *&pcBuffer, UC *&ucLetter)
 		printf("Error to allocate memory: %s", baObj.what());
 		return false;
 	}
-
-	printf("Enter text(accept only the first %u characters):\n", BUFF_TEXT_SIZE - 1);
-	fgets(pcBuffer, BUFF_TEXT_SIZE, stdin);
-	// clear stdin buffer
-	fflush(stdin); 
-
+	do
+	{
+		printf("Enter text(accept only the first %u characters):\n", BUFF_TEXT_SIZE - 1);
+		fgets(pcBuffer, BUFF_TEXT_SIZE, stdin);
+		if(pcBuffer[strlen(pcBuffer) - 1] == 0xa)
+		{
+			pcBuffer[strlen(pcBuffer) - 1] = 0;
+		}
+		// clear stdin buffer
+		fflush(stdin); 
+	}
+	while(!*pcBuffer);
+	
 	do
 	{
 		printf("\nEnter letter(english): ");
