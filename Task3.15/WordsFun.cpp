@@ -60,9 +60,9 @@ void HideWords(char *pcInputStr, US usSize, char cLetter)
 	// start position of current word
 	US usPosWord = 0;
 
-	for(register int i = 0; i < usSize; ++i)
+	for(register int i = 0; i <= usSize; ++i)
 	{
-		if(!isalpha( (UC)pcInputStr[i]) )
+		if(!isalpha( (UC)pcInputStr[i]) || !pcInputStr[i-1])
 		{
 			// cheking for given letter if current word
 			if( memchr(pcInputStr + usPosWord, cLetter, i - usPosWord) ||
