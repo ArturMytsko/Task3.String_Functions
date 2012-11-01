@@ -58,7 +58,7 @@ bool GetNumberOfDay(char *pcDate, US *pRes)
 	}
 	// add 1 to Febr. if year is leap
 	DaysPerMonth += IsLeapYear(usYear) << 2;
-	if(usDay < 0 || usDay > 28 + ( (DaysPerMonth >> (usMonth - 1) * 2) & 0X3) )
+	if(usDay <= 0 || usDay > 28 + ( (DaysPerMonth >> (usMonth - 1) * 2) & 0X3) )
 	{
 		return false;
 	}
