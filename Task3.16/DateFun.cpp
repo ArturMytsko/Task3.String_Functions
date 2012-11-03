@@ -52,7 +52,7 @@ bool GetNumberOfDay(char *pcDate, US *pRes)
 	if(usConut != 3 )
 		return false;
 
-	if(usYear < 0 || usYear > 2050 || usMonth < 0 || usMonth > 12)
+	if(usYear < 0 || usYear > 2050 || usMonth <= 0 || usMonth > 12)
 	{
 		return false;
 	}
